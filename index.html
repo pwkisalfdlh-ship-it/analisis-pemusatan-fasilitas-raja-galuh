@@ -28,13 +28,10 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark mb-4 shadow">
-        <div class="container-fluid justify-content-between">
+        <div class="container-fluid justify-content-center">
             <span class="navbar-brand mb-0 h1 py-2" style="font-size: 1.6rem; font-weight: bold; letter-spacing: 1px;">
                 🗺️ KAJIAN DELINIASI SPASIAL - TIPOLOGI BIVARIAT & SKORING KOMPOSIT
             </span>
-            <div>
-                <a href="peta_ntl.html" class="btn btn-outline-warning btn-sm me-2">Lihat Proyeksi NTL</a>
-            </div>
         </div>
     </nav>
 
@@ -47,6 +44,9 @@
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="hasil-tab" data-bs-toggle="tab" data-bs-target="#hasil" type="button" role="tab" aria-controls="hasil" aria-selected="false">Halaman 2: Hasil & Proxy Spasial</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ntl-tab" data-bs-toggle="tab" data-bs-target="#ntl" type="button" role="tab" aria-controls="ntl" aria-selected="false">Halaman 3: Proyeksi NTL</button>
             </li>
         </ul>
 
@@ -321,6 +321,173 @@
                 </div>
 
             </div>
+            
+            <!-- HALAMAN 3: PROYEKSI NTL -->
+            <div class="tab-pane fade" id="ntl" role="tabpanel" aria-labelledby="ntl-tab">
+                <div class="p-4 bg-white rounded shadow-sm mb-5 border-top border-warning border-4">
+                    <h3 class="section-title text-center" style="border-bottom: none; margin-bottom: 10px;">Analisis Peta Night Time Light (NTL)</h3>
+                    <p class="text-center text-muted mx-auto" style="max-width: 800px; line-height: 1.6;">
+                        Analisis Cahaya Malam Hari atau <strong>Night Time Light (NTL)</strong> digunakan sebagai <em>proxy</em> spasial untuk mengidentifikasi tingkat aktivitas ekonomi dan perkembangan infrastruktur. Menggunakan interpolasi <strong>Inverse Distance Weighting (IDW)</strong>, peta-peta di bawah memodelkan sebaran intensitas cahaya dari 2014-2025, serta proyeksi 5 tahunan hingga 2050 sebagai landasan deliniasi pusat pelayanan RDTR.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- 2014 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2014.jpg" class="card-img-top border-bottom" alt="Peta NTL 2014" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2014</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2015 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2015.jpg" class="card-img-top border-bottom" alt="Peta NTL 2015" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2015</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2016 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2016.jpg" class="card-img-top border-bottom" alt="Peta NTL 2016" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2016</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2017 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2017.jpg" class="card-img-top border-bottom" alt="Peta NTL 2017" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2017</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2018 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2018.jpg" class="card-img-top border-bottom" alt="Peta NTL 2018" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2018</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2019 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2019.jpg" class="card-img-top border-bottom" alt="Peta NTL 2019" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2019</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2020 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2020.jpg" class="card-img-top border-bottom" alt="Peta NTL 2020" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2021 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2021.jpg" class="card-img-top border-bottom" alt="Peta NTL 2021" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2022 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2022.jpg" class="card-img-top border-bottom" alt="Peta NTL 2022" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2023 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2023.jpg" class="card-img-top border-bottom" alt="Peta NTL 2023" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2024 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2024.jpg" class="card-img-top border-bottom" alt="Peta NTL 2024" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2025 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2025.jpg" class="card-img-top border-bottom" alt="Peta NTL 2025" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size:0.95rem;">Tahun 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2030 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2030.jpg" class="card-img-top border-bottom" alt="Peta NTL 2030" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-primary text-white px-3 py-2" style="font-size:0.95rem;">Tahun 2030 (Proyeksi)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2035 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2035.jpg" class="card-img-top border-bottom" alt="Peta NTL 2035" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-primary text-white px-3 py-2" style="font-size:0.95rem;">Tahun 2035 (Proyeksi)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2040 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2040.jpg" class="card-img-top border-bottom" alt="Peta NTL 2040" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-primary text-white px-3 py-2" style="font-size:0.95rem;">Tahun 2040 (Proyeksi)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2045 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2045.jpg" class="card-img-top border-bottom" alt="Peta NTL 2045" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-primary text-white px-3 py-2" style="font-size:0.95rem;">Tahun 2045 (Proyeksi)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2050 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="maps_ntl/Peta_NTL_IDW_2050.jpg" class="card-img-top border-bottom" alt="Peta NTL 2050" loading="lazy">
+                            <div class="card-body text-center p-2">
+                                <span class="badge bg-primary text-white px-3 py-2" style="font-size:0.95rem;">Tahun 2050 (Proyeksi)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="text-center mt-2 mb-4">
