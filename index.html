@@ -331,6 +331,29 @@
                     </p>
                 </div>
 
+                <!-- Evaluasi Model (Actual vs Predicted) -->
+                <div class="card shadow-sm mt-4 mb-5 border-top border-info border-4">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-info mb-4 text-center fw-bold">Evaluasi Model: Actual vs Predicted NTL (2028)</h4>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 text-center mb-4 mb-md-0">
+                                <img src="maps_ntl/evaluasi_model.png" class="img-fluid rounded border shadow-sm" alt="Grafik Actual vs Predicted NTL">
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3">Interpretasi Hasil Prediksi:</h5>
+                                <ul class="text-muted" style="line-height: 1.7;">
+                                    <li><strong>Korelasi Positif yang Kuat:</strong> Titik-titik data membentuk pola diagonal dari kiri bawah ke kanan atas. Ini menunjukkan bahwa model regresi spasial berhasil menangkap tren dengan baik; semakin tinggi nilai aktual NTL, nilai prediksi tahun 2028 juga semakin tinggi secara proporsional.</li>
+                                    <li><strong>Akurasi Tinggi pada Intensitas Rendah:</strong> Terdapat konsentrasi (pengelompokan) titik yang sangat padat di rentang nilai NTL rendah (0 - 20). Hal ini mengindikasikan bahwa model sangat akurat dalam memprediksi perkembangan wilayah pinggiran atau pedesaan.</li>
+                                    <li><strong>Sebaran pada Intensitas Tinggi:</strong> Pada rentang nilai NTL di atas 30 (kawasan pusat), sebaran titik mulai merenggang (*heteroskedastisitas*). Beberapa *outliers* menunjukkan nilai prediksi yang lebih tinggi/rendah dari tren linier, yang wajar akibat dinamika aglomerasi infrastruktur yang cepat di pusat pelayanan.</li>
+                                </ul>
+                                <div class="alert alert-light border border-info mt-3" role="alert">
+                                    <small><strong>Kesimpulan:</strong> Secara keseluruhan, model prediksi ini cukup tangguh (*robust*) untuk dijadikan dasar deliniasi pusat RDTR, khususnya dalam memetakan area yang berpotensi menjadi simpul pertumbuhan baru di masa depan.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row g-4">
                     <!-- 2014 -->
                     <div class="col-md-6 col-lg-4">
@@ -487,28 +510,6 @@
                     </div>
                 </div>
 
-                <!-- Evaluasi Model (Actual vs Predicted) -->
-                <div class="card shadow-sm mt-5 mb-4 border-top border-info border-4">
-                    <div class="card-body p-4">
-                        <h4 class="card-title text-info mb-4 text-center fw-bold">Evaluasi Model: Actual vs Predicted NTL (2028)</h4>
-                        <div class="row align-items-center">
-                            <div class="col-md-6 text-center mb-4 mb-md-0">
-                                <img src="maps_ntl/evaluasi_model.png" class="img-fluid rounded border shadow-sm" alt="Grafik Actual vs Predicted NTL">
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="fw-bold mb-3">Interpretasi Hasil Prediksi:</h5>
-                                <ul class="text-muted" style="line-height: 1.7;">
-                                    <li><strong>Korelasi Positif yang Kuat:</strong> Titik-titik data membentuk pola diagonal dari kiri bawah ke kanan atas. Ini menunjukkan bahwa model IDW (atau regresi) berhasil menangkap tren dengan baik; semakin tinggi nilai aktual NTL, nilai prediksi tahun 2028 juga semakin tinggi secara proporsional.</li>
-                                    <li><strong>Akurasi Tinggi pada Intensitas Rendah:</strong> Terdapat konsentrasi (pengelompokan) titik yang sangat padat di rentang nilai NTL rendah (0 - 20). Hal ini mengindikasikan bahwa model sangat akurat dalam memprediksi perkembangan wilayah pinggiran atau pedesaan yang belum terlalu padat.</li>
-                                    <li><strong>Sebaran pada Intensitas Tinggi:</strong> Pada rentang nilai NTL di atas 30 (kawasan pusat keramaian), sebaran titik mulai merenggang dan menunjukkan sedikit variasi (*heteroskedastisitas*). Beberapa titik (*outliers*) menunjukkan nilai prediksi yang lebih tinggi atau lebih rendah dari tren liniernya, yang merupakan hal wajar akibat dinamika aglomerasi infrastruktur yang cepat di pusat pelayanan.</li>
-                                </ul>
-                                <div class="alert alert-light border border-info mt-3" role="alert">
-                                    <small><strong>Kesimpulan:</strong> Secara keseluruhan, model prediksi ini cukup tangguh (*robust*) untuk dijadikan dasar deliniasi pusat RDTR, khususnya dalam memetakan area yang berpotensi menjadi simpul pertumbuhan baru di masa depan.</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
