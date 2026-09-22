@@ -610,14 +610,27 @@
                 <!-- Bagian 4: Peta Animasi -->
                 <div class="card shadow-sm mt-4 mb-5 border-top border-info border-4">
                     <div class="card-body p-4">
-                        <h4 class="card-title text-info mb-4 text-center fw-bold">Bagian 4: Peta Animasi Spasial Lalu Lintas (24 Jam)</h4>
+                        <h4 class="card-title text-info mb-4 text-center fw-bold">Bagian 4: Peta Animasi Spasial & Kesimpulan Keseluruhan</h4>
                         
+                        <div class="alert alert-warning border border-warning text-center mb-4" role="alert">
+                            <small><i class="bi bi-exclamation-triangle-fill"></i> <strong>Catatan:</strong> Ukuran file animasi spasial di bawah ini cukup besar (~50MB). Mohon tunggu beberapa saat hingga animasi termuat sepenuhnya.</small>
+                        </div>
+
                         <div class="row align-items-center">
-                            <div class="col-12 text-center mb-4">
-                                <div class="alert alert-warning border border-warning" role="alert">
-                                    <small><i class="bi bi-exclamation-triangle-fill"></i> <strong>Catatan:</strong> Ukuran file animasi spasial ini cukup besar (~50MB). Mohon tunggu beberapa saat hingga animasi termuat sepenuhnya.</small>
+                            <!-- Kolom Kiri: Animasi GIF -->
+                            <div class="col-md-7 text-center mb-4 mb-md-0">
+                                <img src="traffic_products/traffic_animation.gif" class="img-fluid rounded border shadow-sm" alt="Peta Animasi Lalu Lintas" loading="lazy">
+                            </div>
+                            <!-- Kolom Kanan: Summary Analisis -->
+                            <div class="col-md-5">
+                                <h5 class="fw-bold mb-3 text-dark">Sintesa Akhir Profiling Kemacetan</h5>
+                                <div class="bg-light p-3 rounded border">
+                                    <ul class="text-muted mb-0" style="line-height: 1.7; padding-left: 1.2rem;">
+                                        <li><strong>Kualitas Layanan (LoS):</strong> Tingkat kemacetan (<em>C-Index</em>) sangat rendah (< 0.30) dan cenderung stabil. Jaringan jalan di Rajagaluh sangat mumpuni menampung volume pergerakan saat ini.</li>
+                                        <li><strong>Pola Non-Komuter:</strong> Aktivitas dominan bersifat niaga, agrikultur, atau logistik, yang dibuktikan dengan porsi bangkitan signifikan di waktu dini hari (03:00 - 05:00).</li>
+                                        <li><strong>Rekomendasi RDTR:</strong> Karena ketiadaan kemacetan kronis harian, prioritas tata ruang difokuskan pada penguatan fungsi simpul pasar atau terminal dengan menyediakan area bongkar-muat yang memadai.</li>
+                                    </ul>
                                 </div>
-                                <img src="traffic_products/traffic_animation.gif" class="img-fluid rounded border shadow-sm mt-2" alt="Peta Animasi Lalu Lintas" loading="lazy">
                             </div>
                         </div>
                     </div>
