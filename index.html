@@ -48,6 +48,9 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="ntl-tab" data-bs-toggle="tab" data-bs-target="#ntl" type="button" role="tab" aria-controls="ntl" aria-selected="false">Halaman 3: Proyeksi NTL</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="traffic-tab" data-bs-toggle="tab" data-bs-target="#traffic" type="button" role="tab" aria-controls="traffic" aria-selected="false">Halaman 4: Profiling Traffic</button>
+            </li>
         </ul>
 
         <div class="tab-content" id="myTabContent">
@@ -510,6 +513,99 @@
                     </div>
                 </div>
 
+            </div>
+            
+            <!-- HALAMAN 4: PROFILING TRAFFIC -->
+            <div class="tab-pane fade" id="traffic" role="tabpanel" aria-labelledby="traffic-tab">
+                <div class="p-4 bg-white rounded shadow-sm mb-5 border-top border-success border-4">
+                    <h3 class="section-title text-center" style="border-bottom: none; margin-bottom: 10px;">Analisis Profiling Lalu Lintas & Deteksi Jam Sibuk</h3>
+                    <p class="text-center text-muted mx-auto" style="max-width: 800px; line-height: 1.6;">
+                        Analisis ini menggunakan ekstraksi data histori lalu lintas (<em>Congestion Index</em>) untuk memetakan karakteristik dan pola kepadatan jalan di Rajagaluh. Hasilnya menjadi landasan untuk memahami waktu-waktu kritis, mengantisipasi kebutuhan infrastruktur transportasi, dan merencanakan sirkulasi logistik serta mobilitas harian warga.
+                    </p>
+                </div>
+
+                <!-- Bagian 1: Pola Waktu Kemacetan -->
+                <div class="card shadow-sm mt-4 mb-5 border-top border-primary border-4">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-primary mb-4 text-center fw-bold">Bagian 1: Pola Waktu & Deteksi Jam Sibuk (Rush Hour)</h4>
+                        
+                        <div class="row align-items-center mb-4">
+                            <div class="col-md-7 text-center mb-4 mb-md-0">
+                                <img src="traffic_products/01_heatmap_day_hour_cindex.png" class="img-fluid rounded border shadow-sm mb-3" alt="Heatmap Kemacetan per Hari dan Jam">
+                            </div>
+                            <div class="col-md-5">
+                                <h5 class="fw-bold mb-3">Interpretasi Heatmap Kemacetan:</h5>
+                                <ul class="text-muted" style="line-height: 1.7;">
+                                    <li><strong>Kondisi Umum yang Lancar:</strong> Secara keseluruhan, <em>Congestion Index</em> di Rajagaluh berada di angka rendah (~0.25), menandakan tingkat pelayanan jalan (<em>Level of Service</em>) yang sangat baik dan tidak ada macet parah.</li>
+                                    <li><strong>Puncak Aktivitas Spesifik:</strong> Ada sedikit peningkatan intensitas lalu lintas pada dini hari (jam 03.00 - 05.00), yang kemungkinan berkaitan dengan distribusi logistik fajar atau aktivitas pasar tradisional yang mulai beroperasi di subuh hari.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <hr class="my-4">
+                        
+                        <div class="row align-items-center">
+                            <div class="col-md-5 order-2 order-md-1">
+                                <h5 class="fw-bold mb-3">Deteksi Puncak Aktivitas Harian:</h5>
+                                <ul class="text-muted" style="line-height: 1.7;">
+                                    <li>Algoritma mendeteksi lonjakan di hari <strong>Senin (jam 03:00)</strong> serta <strong>akhir pekan (Sabtu & Minggu jam 05:00)</strong>.</li>
+                                    <li>Hal ini mengisyaratkan bahwa pusat kegiatan komersial atau aglomerasi pedagang beroperasi sejak sangat pagi dan menarik pergerakan tinggi terutama menjelang hari libur.</li>
+                                </ul>
+                                <div class="alert alert-light border border-primary mt-3" role="alert">
+                                    <small><strong>Implikasi RDTR:</strong> Diperlukan antisipasi pada fungsi simpul pasar atau terminal lokal untuk mengatur manajemen parkir/<em>loading-dock</em> kendaraan logistik agar tidak mengganggu badan jalan pada jam 03.00-05.00 pagi.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-7 order-1 order-md-2 text-center mb-4 mb-md-0">
+                                <img src="traffic_products/08_peak_detection_labeled.png" class="img-fluid rounded border shadow-sm" alt="Deteksi Puncak Kemacetan">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian 2: Karakteristik Harian -->
+                <div class="card shadow-sm mt-4 mb-5 border-top border-warning border-4">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-warning mb-4 text-center fw-bold" style="color: #d39e00 !important;">Bagian 2: Karakteristik & Signatur Pergerakan Harian</h4>
+                        
+                        <div class="row align-items-center mb-4">
+                            <div class="col-md-6 text-center mb-4 mb-md-0">
+                                <h5 class="mb-3 text-muted">Profil Radar per Hari (Senin - Minggu)</h5>
+                                <img src="traffic_products/07_radar_profile_per_day.png" class="img-fluid rounded border shadow-sm" alt="Profil Radar per Hari">
+                            </div>
+                            <div class="col-md-6 text-center mb-4 mb-md-0">
+                                <h5 class="mb-3 text-muted">Komparasi Weekday vs Weekend</h5>
+                                <img src="traffic_products/10_weekday_vs_weekend_cindex.png" class="img-fluid rounded border shadow-sm" alt="Komparasi Hari Kerja dan Akhir Pekan">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-light p-4 rounded border">
+                                    <h5 class="fw-bold mb-3">Sintesa Karakteristik Mingguan:</h5>
+                                    <p class="text-muted" style="line-height: 1.6;">Grafik Radar Profile dan perbandingan Weekday-Weekend membuktikan bahwa <strong>karakteristik mobilitas wilayah ini sangat stabil dan konsisten.</strong> Tidak ada perbedaan ekstrem antara hari kerja biasa (Selasa-Jumat) dengan akhir pekan. Ketiadaan <em>peak hour</em> khas perkotaan komuter (misal: jam 07.00 pagi atau 17.00 sore) membuktikan bahwa fungsi dominan kawasan ini bukanlah permukiman satelit/komuter, melainkan pusat transit perdagangan/agrikultur mandiri dengan aktivitas yang terdistribusi konstan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian 3: Dinamika -->
+                <div class="card shadow-sm mt-4 mb-5 border-top border-danger border-4">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-danger mb-4 text-center fw-bold">Bagian 3: Dinamika & Variabilitas Kemacetan</h4>
+                        
+                        <div class="row align-items-center">
+                            <div class="col-md-6 text-center mb-4 mb-md-0">
+                                <img src="traffic_products/06_animated_congestion_curve.gif" class="img-fluid rounded border shadow-sm" alt="Animasi Kurva Kemacetan">
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3">Variabilitas Jam Tertentu:</h5>
+                                <img src="traffic_products/12_variability_per_hour.png" class="img-fluid rounded border shadow-sm mb-3" alt="Variabilitas Kemacetan per Jam">
+                                <p class="text-muted" style="line-height: 1.6;">Rentang variabilitas terbesar (ketidakpastian lalu lintas) terjadi pada jam 02.00 hingga 06.00 pagi. Sementara di sisa hari, pergerakan lalu lintas masuk dalam kategori konstan dengan varians yang nyaris nol. Pola spasio-temporal semacam ini sangat krusial bagi pemerintah daerah untuk menugaskan petugas ketertiban lalu-lintas secara efisien, yakni difokuskan pada pengawasan operasional subuh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
