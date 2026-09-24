@@ -729,23 +729,80 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="card shadow-sm h-100 border-top border-warning border-4">
-                            <div class="card-body p-4 text-center">
-                                <h4 class="card-title fw-bold text-warning mb-4">3. Peta Hirarki Delineasi</h4>
-                                <img src="maps_ntl/peta_hirarki.png" class="img-fluid rounded border shadow-sm" alt="Peta Hirarki Delineasi WP" onerror="this.src='https://via.placeholder.com/600x400?text=Peta+Hirarki+Delineasi'">
-                                <p class="text-muted mt-3 small">Peta ini mengilustrasikan pembagian prioritas pengembangan wilayah berdasarkan total agregasi skor tiap desa.</p>
-                            </div>
-                        </div>
+                <style>
+                .kriteria-header {
+                    background-color: #003366;
+                    color: white;
+                    padding: 15px 30px;
+                    font-size: 1.8rem;
+                    font-weight: 800;
+                    margin-bottom: 40px;
+                    position: relative;
+                    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+                    text-align: left;
+                }
+                .kriteria-header::before {
+                    content: '';
+                    position: absolute;
+                    left: -15px; top: 0; bottom: 0; width: 15px;
+                    background-color: #cccccc;
+                }
+                .map-title-box {
+                    background-color: #008ebf;
+                    color: white;
+                    border: 3px solid #000;
+                    font-weight: bold;
+                    padding: 8px 40px;
+                    display: inline-block;
+                    font-size: 1.2rem;
+                    margin-bottom: 15px;
+                    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+                }
+                .map-desc-box {
+                    border: 2px dashed #000;
+                    padding: 15px;
+                    background-color: rgba(255, 255, 255, 0.95);
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    text-align: left;
+                    margin: 10px auto 20px auto;
+                    max-width: 90%;
+                    position: relative;
+                    z-index: 10;
+                }
+                .map-img-custom {
+                    border: none;
+                    background-color: transparent;
+                    border-radius: 5px;
+                    margin-top: -30px;
+                    position: relative;
+                    z-index: 5;
+                    width: 90%;
+                }
+                </style>
+
+                <div class="mt-5 mb-5" style="background-color: #fff; padding: 20px 0; border-radius: 10px;">
+                    <div class="kriteria-header">
+                        Kriteria Penentuan Delineasi
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="card shadow-sm h-100 border-top border-danger border-4">
-                            <div class="card-body p-4 text-center">
-                                <h4 class="card-title fw-bold text-danger mb-4">4. Peta Kernel Density</h4>
-                                <img src="kde_total_berbobot.png" class="img-fluid rounded border shadow-sm" alt="Peta Kernel Density Fasilitas" onerror="this.src='https://via.placeholder.com/600x400?text=Peta+Kernel+Density'">
-                                <p class="text-muted mt-3 small">Peta estimasi kepadatan fasilitas (KDE) yang telah dibobot berdasarkan hierarki pelayanannya.</p>
+                    
+                    <div class="row text-center mt-4">
+                        <!-- Kolom Kiri: Kernel Density -->
+                        <div class="col-md-6 mb-5">
+                            <div class="map-title-box">Kernel Density</div>
+                            <div class="map-desc-box">
+                                Dilihat dari segi konsentrasi permukiman, ekonomi dan fasilitas dapat disimpulkan terkonsentrasi di Ds. Rajagaluh Lor, Ds. Rajagaluh, dan Ds. Rajagaluh Kidul.
                             </div>
+                            <img src="kde_total_berbobot.png" class="img-fluid map-img-custom" alt="Kernel Density" onerror="this.src='https://via.placeholder.com/600x400?text=Peta+Kernel+Density'">
+                        </div>
+                        
+                        <!-- Kolom Kanan: Urban Growth / Hirarki -->
+                        <div class="col-md-6 mb-5">
+                            <div class="map-title-box">Urban Growth</div>
+                            <div class="map-desc-box">
+                                Potensi pertumbuhan perkotaan berdasarkan arah kebijakan dan arah potensi pertumbuhan perkotaan di masa mendatang berada disekitar jalan arteri dan jalan kolektor serta disekitar rencana pusat pelayanan yang secara keseluruhan berada di Ds. Rajagaluh Lor, Ds. Rajagaluh, dan Ds. Rajagaluh Kidul.
+                            </div>
+                            <img src="maps_ntl/peta_hirarki.png" class="img-fluid map-img-custom" alt="Urban Growth" onerror="this.src='https://via.placeholder.com/600x400?text=Peta+Urban+Growth'">
                         </div>
                     </div>
                 </div>
