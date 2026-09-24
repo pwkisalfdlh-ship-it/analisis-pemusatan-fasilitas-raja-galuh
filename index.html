@@ -529,19 +529,45 @@
 
                 <div class="card shadow-sm mb-5 border-top border-primary border-4">
                     <div class="card-body p-4">
-                        <h4 class="card-title fw-bold text-primary mb-4">1. Metodologi Komprehensif</h4>
+                        <h4 class="card-title fw-bold text-primary mb-4">1. Metodologi Komprehensif Delineasi WP</h4>
                         <div class="bg-light p-4 rounded border">
-                            <p>Penentuan Delineasi Wilayah Perencanaan (WP) RDTR menggunakan metode skoring multi-kriteria <em>(Multi-Criteria Evaluation)</em> dengan pendekatan <em>soft-constraint</em> dan <em>hard-constraint</em>. Analisis ini mengintegrasikan 7 (tujuh) variabel spasial pembentuk ruang kota:</p>
-                            <ul>
-                                <li><strong>Kebijakan (Pola Ruang, Sistem Pusat, Jaringan Jalan):</strong> Pembobotan berdasarkan status klasifikasi jalan dan hierarki pusat pelayanan sesuai arahan RTRW.</li>
-                                <li><strong>Kebencanaan (Multi-Hazard):</strong> Penilaian kerawanan kumulatif (banjir, longsor, sesar aktif) sebagai faktor pembatas pengembangan.</li>
-                                <li><strong>Kesesuaian Lahan (Fisik Dasar):</strong> Evaluasi kelas lereng, kemiringan, dan elevasi untuk menentukan kelayakan teknis pembangunan.</li>
-                                <li><strong>Isu Strategis:</strong> Analisis radius dampak dari titik-titik isu strategis lokal/regional yang mendorong atau menghambat investasi.</li>
-                                <li><strong>Kawasan Hutan (Hard-Constraint):</strong> Identifikasi area lindung/hutan yang mutlak tidak boleh dikembangkan (skor = 0) atau dieksklusi <em>(excluded)</em>.</li>
-                                <li><strong>LP2B / Sawah Dilindungi:</strong> Restriksi area pertanian pangan berkelanjutan untuk menjaga ketahanan pangan wilayah.</li>
-                                <li><strong>Konsentrasi Fasilitas (Kernel Density):</strong> Estimasi kepadatan aglomerasi fasilitas perkotaan berbasis bobot kegiatan untuk mendeteksi embrio pusat kota.</li>
+                            <p style="font-size: 1.05rem; line-height: 1.7;">
+                                Penentuan Delineasi Wilayah Perencanaan (WP) RDTR menggunakan <strong>Metode Skoring Spasial Multi-Kriteria <em>(Multi-Criteria Evaluation)</em></strong> yang diotomatisasi melalui modul algoritma PyQGIS. Analisis ini mengekstraksi, menormalisasi, dan mengagregasi 7 (tujuh) variabel keruangan ke dalam unit analisis poligon batas administrasi desa.
+                            </p>
+                            
+                            <h5 class="fw-bold mt-4 mb-3 text-dark">Tujuh (7) Variabel Pembentuk Ruang:</h5>
+                            <ul class="list-group list-group-flush mb-4" style="border-radius: 8px; border: 1px solid #dee2e6;">
+                                <li class="list-group-item bg-transparent">
+                                    <span class="badge bg-primary me-2">1. Kebijakan Spasial</span> Pembobotan berlapis berdasarkan radius pengaruh jaringan jalan (arteri/kolektor), status pusat pelayanan (PKL/PPK), dan arahan pola ruang dari RTRW.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <span class="badge bg-danger me-2">2. Kebencanaan (Multi-Hazard)</span> Penilaian kerawanan kumulatif (seperti banjir, longsor, sesar aktif). Bertindak sebagai faktor pengurang skor (limitasi) apabila melampaui indeks rawan tinggi (> 0.66).
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <span class="badge bg-success me-2">3. Kesesuaian Lahan</span> Evaluasi daya dukung fisik dasar, khususnya kelerengan (optimal &lt; 25%) dan kesesuaian status kawasan (APL vs Lindung) untuk kelayakan teknis pembangunan fisik.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <span class="badge bg-info text-dark me-2">4. Isu Strategis</span> Analisis proksimitas (radius dampak) dari titik/poligon isu strategis lokal maupun regional, dikalkulasi menggunakan matriks dampak (pendorong atau penghambat investasi).
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <span class="badge bg-warning text-dark me-2">5. Kernel Density (Aglomerasi)</span> Estimasi kepadatan spasial (KDE) fasilitas perkotaan, simpul ekonomi, dan permukiman dengan resolusi grid presisi tinggi (50m) untuk mendeteksi embrio pusat kota.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <span class="badge bg-dark me-2">6. Kawasan Hutan</span> Restriksi pemanfaatan ruang merujuk pada ketetapan batas hutan KLHK. Bertindak sebagai <em>Soft-Score</em> (pengurang nilai) atau <em>Hard-Constraint</em> (desa dieksklusi mutlak jika tertutup total).
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <span class="badge bg-secondary me-2">7. Perlindungan LP2B / LSD</span> Restriksi area Lahan Pertanian Pangan Berkelanjutan (Ketetapan ATR/BPN) untuk menjamin ketahanan pangan, beroperasi serupa dengan filter kawasan hutan.
+                                </li>
                             </ul>
-                            <p class="mb-0">Semua variabel di atas dinormalisasi (Min-Max) dan diagregasi untuk mendapatkan <strong>Skor Kesesuaian Delineasi</strong> pada tiap desa.</p>
+
+                            <h5 class="fw-bold mb-2 text-dark">Mekanisme Agregasi & Klasifikasi Hirarki:</h5>
+                            <p style="line-height: 1.6; margin-bottom: 0;">
+                                Skor dari setiap variabel diekstraksi ke level desa menggunakan <em>Zonal Statistics</em>. Sistem kemudian melakukan agregasi (penjumlahan normalisasi) untuk mendapatkan <strong>Skor Komposit (Jumlah Total)</strong>. 
+                                Berdasarkan total skor tersebut, algoritma <strong>Jenks Natural Breaks</strong> mengklasifikasikan desa ke dalam 3 tingkatan prioritas pembentuk WP: <br>
+                                <span class="badge bg-success mt-2">Hirarki I (Prioritas Tertinggi)</span> 
+                                <span class="badge bg-warning text-dark mt-2">Hirarki II (Prioritas Sedang)</span> 
+                                <span class="badge bg-danger mt-2">Hirarki III (Prioritas Rendah / Penyangga)</span>.
+                            </p>
                         </div>
                     </div>
                 </div>
